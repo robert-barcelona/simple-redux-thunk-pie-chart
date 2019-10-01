@@ -1,6 +1,5 @@
 {
   "extends": ["eslint:recommended","plugin:react/recommended", "prettier", "prettier/react"],
-  "plugins": ["jest"],
 
   "parserOptions": {
     "ecmaVersion": 2019,
@@ -10,7 +9,6 @@
     }
   },
   "env": {
-    "jest/globals": true,
     "es6": true,
     "browser": true,
     "node": true

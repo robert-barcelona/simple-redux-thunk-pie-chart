@@ -4,7 +4,7 @@ import {
   FINISHED_API_CALL,
   STORE_BREED_IMAGE,
   STORE_ALL_BREEDS,
-  STORE_CHART_DATA,
+  STORE_CHART_DATA
 } from "./action-types"
 
 import { logicGetAllBreeds, logicGetImageForBreed } from "../logic"
@@ -32,7 +32,7 @@ export const getAllBreedImages = () => async (dispatch, getState) => {
       )
     }
     await Promise.all(promises)
-    processChartData(dispatch,getState)
+    processChartData(dispatch, getState)
   } catch (e) {
     dispatch(error(e.message))
   } finally {
@@ -55,8 +55,7 @@ export const getAllBreeds = () => async dispatch => {
   }
 }
 
-
- const processChartData = (dispatch,getState) => {
+const processChartData = (dispatch, getState) => {
   const data = Object.entries(getState().images).map(entry => {
     const [breed, images] = entry
     console.log(breed, images.length)
@@ -73,5 +72,5 @@ export const getAllBreeds = () => async dispatch => {
     }
     return 0
   })
-  dispatch(storeChartData(data.slice(0,11)))
+  dispatch(storeChartData(data.slice(0, 11)))
 }
