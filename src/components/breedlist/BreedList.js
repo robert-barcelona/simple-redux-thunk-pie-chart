@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux"
 import { getAllBreedImages, getAllBreeds } from "../../redux/action-creators"
 
 const Breeds = () => {
-  const breeds = useSelector(state => state.breeds)
+  const chartData = useSelector(state => state.chartData)
+
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -14,7 +15,10 @@ const Breeds = () => {
     fetchData()
   }, [])
 
-  return <div>Hi</div>
+  return <div>{chartData.map(datum => {
+    const [name,images] = datum
+    return <p>{name} : {images}</p>
+  })}</div>
 }
 
 export default Breeds

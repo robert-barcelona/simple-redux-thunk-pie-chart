@@ -19,7 +19,6 @@ export const logicGetAllBreeds = async () => {
 
 export const logicGetImageForBreed = async breed => {
   try {
-    console.log('getting images', breed)
     if (!breed || typeof breed !== "string" || breed.length === 0)
       throw new Error("Missing breed parameter")
     const partURL = `http://dog.ceo/api/breed/${breed}/images`

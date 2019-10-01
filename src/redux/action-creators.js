@@ -5,7 +5,6 @@ import {
   STORE_BREED_IMAGE,
   STORE_ALL_BREEDS,
   STORE_CHART_DATA,
-  PROCESS_CHART_DATA
 } from "./action-types"
 
 import { logicGetAllBreeds, logicGetImageForBreed } from "../logic"
@@ -49,7 +48,6 @@ export const getAllBreeds = () => async dispatch => {
     if (!dogBreeds) throw new Error("Dog breeds were not retrieved from API")
     dogBreeds.sort()
     dispatch(storeDogBreeds(dogBreeds))
-    dispatch(getAllBreedImages(dogBreeds))
   } catch (e) {
     dispatch(error(e.message))
   } finally {

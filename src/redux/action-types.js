@@ -8,4 +8,3 @@ export const CALLING_API = "CALLING API"
 export const ERROR = "ERROR"
 
 export const STORE_CHART_DATA = "store chart data"
-export const PROCESS_CHART_DATA = "process chart data"
