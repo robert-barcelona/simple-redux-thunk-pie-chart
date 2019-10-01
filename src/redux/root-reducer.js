@@ -4,20 +4,23 @@ import { combineReducers } from "redux"
 import apiState from "./api-state-reducer.js"
 import breeds from "./breed-reducer"
 import images from "./image-reducer"
+import chartData from "./chart-data-reducer"
 import errorMessage from "./error-message-reducer"
 
 export const originalState = {
   apiState: { isLoading: false },
   errorMessage: "",
   breeds: [],
-  images: {}
+  images: {},
+  chartData: []
 }
 
 const rootReducer = combineReducers({
   apiState,
   breeds,
   errorMessage,
-  images
+  images,
+  chartData
 })
 
 export default rootReducer
