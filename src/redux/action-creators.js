@@ -32,7 +32,6 @@ export const getAllBreedImages = () => async (dispatch, getState) => {
       )
     }
     await Promise.all(promises)
-    processChartData(dispatch, getState)
   } catch (e) {
     dispatch(error(e.message))
   } finally {
@@ -55,10 +54,9 @@ export const getAllBreeds = () => async dispatch => {
   }
 }
 
-const processChartData = (dispatch, getState) => {
+export const processChartData = () => (dispatch, getState) => {
   const data = Object.entries(getState().images).map(entry => {
     const [breed, images] = entry
-    console.log(breed, images.length)
     return [breed, images.length]
   })
   data.sort((entry1, entry2) => {

@@ -12,7 +12,6 @@ export const logicGetAllBreeds = async () => {
     const breeds = results.data.message
     return Object.keys(breeds)
   } catch (e) {
-    console.log(e)
     throw new Error(`Error getting breeds: ${e.message}`)
   }
 }
