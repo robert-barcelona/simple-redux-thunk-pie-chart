@@ -8,7 +8,7 @@ import chartData from "./chart-data-reducer"
 import errorMessage from "./error-message-reducer"
 
 export const originalState = {
-  apiState: { isLoading: false },
+  apiState: false,
   errorMessage: "",
   breeds: [],
   images: {},

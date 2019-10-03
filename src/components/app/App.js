@@ -1,17 +1,16 @@
 import React from "react"
-import "bulma/bulma.sass"
-import "../../"
 import "./app.scss"
 import BreedList from "../breedlist/BreedList"
 import BreedChart from "../breedchart/BreedChart"
-//import Error from "../error/Error";
+import Spinner from "../spinner/Spinner"
 
 const App = () => {
   return (
-    <div className="app">
-      <BreedList />
-      <BreedChart />
-    </div>
+    <section className="app ">
+      <Spinner/>
+      <BreedList/>
+      <BreedChart/>
+    </section>
   )
 }
 
