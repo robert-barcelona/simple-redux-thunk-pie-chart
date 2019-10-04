@@ -8,12 +8,8 @@ function reducer(state = initialState, action) {
     case STORE_BREED_IMAGE:
       const { image, breed } = action.data
       const newState = cloneDeep(state)
-      if (!newState.hasOwnProperty(breed)) {
-        newState[breed] = image
-        return newState
-      } else {
-        newState[breed] = image
-      }
+      newState[breed] = image
+      return newState
 
     default:
       return state
